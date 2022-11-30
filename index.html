@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <!--********** Link To The Style Sheet **********-->
+    <link rel="stylesheet" type="text/css" href="../Personal Portifolio/css/style.css">
+    <!--********** Font Awesome Icons Link*****-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+    font-awesome/6.1.1/css/all.min.css/>"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio Website</title>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="menu">
+        <div class="logo"><h2>Desenvolvedor<span>WEB</span></h2>
+        <img src="../Personal Portifolio/imagem/Logo.jpg"  alt="Logo"></div>
+
+       
+<audio controls autoplay>
+
+    <source src="../Personal Portifolio/Musicas/2Pac - Act A Fool (Remix).mp3"type="audio/mpeg">
+ 
+
+  </audio>
+
+          <ul>
+            <li><a href="../Personal Portifolio/imagem/Home 1.jpg" target="_blank" class="active" onclick="markMenuItem(this)">Home</a></li>
+            <li><a href="../Personal Portifolio/imagem/Serviços.png" target="_blank"onclick="markMenuItem(this)">Serviços</a></li>
+            <li><a href="../Personal Portifolio/imagem/Cartao de contato-zap.png" target="_blank" onclick="markMenuItem(this)">Contato</a></li>
+        </ul>
+
+    <div  id="menuBtn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div> 
+</div>
+
+
+    </nav>
+
+<main>
+
+
+
+    <section class="infoText">
+        <p>Olá, Meu Nome é</p>
+        <h1>Alexsandro<span>Rodrigues</span></h1>
+        <p>Estudante de Web Desiger & Desenvolvedor</p>
+        <a href="https://www.linkedin.com/in/alexsandro-rodrigues88510576/" target="_blank"><button>linkedin</button>
+        <a href="../Personal Portifolio/imagem/curriculo alexsandro.docx" target="_blank"><button>Curriculo</button>
+    
+    
+            
+                <ul class=".icone-rede-social a">
+                      <li><a href="https://www.linkedin.com/in/alexsandro-rodrigues88510576/"target="_blank"><img src="../Personal Portifolio/Icones-Rede Social/logo-linkedin.svg"></a></li>
+                      <li><a href="https://instagram.com.br/alexfox8851"target="_blank"><img src="../Personal Portifolio/Icones-Rede Social/logo-instagram.svg"></a></li>
+                      <li><a href="https://github.com/Alexfoxhound"target="_blank"><img src="../Personal Portifolio/Icones-Rede Social/logo-github.svg"></a></li>
+
+                </ul>
+
+                
+
+    </section>
+
+ </main>
+
+
+</div>
+
+
+<script type="text/javascript">
+var menu_btn = document.querySelector('#menuBtn');
+var menu = document.querySelector('.menu ul');
+var menuItems = document.querySelectorAll('.meu ul li a');
+
+menu_btn.addEventListener('click', function(){
+    menu_btn.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+for(i = 0; i < menuItems.length; i++){
+    menuItems[i].addEventListener('click',function(){
+      menu_btn.classList.remover('active');
+      menu.classList.remover('active');
+    })
+}
+
+function markMenuItem(menuItem){
+    for(var i = 0; i <  menuItems.length; i++){
+        menuItems[i].classList.remove('active');
+    }
+    menuItem.classList.add('active');
+}
+
+
+</script>
+
+
+</body>
+</html>

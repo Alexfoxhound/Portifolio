@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color:#dedce1;
+}
+.container .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0px 30px;
+    height: 70px;
+}
+.container .logo{
+    color: #dedce1;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.container .logo span{
+    padding-left: 10px;
+    color: yellow;
+}
+.menu ul{
+    list-style: none;
+}
+.menu ul li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.menu ul li a{
+    position:left 100px;
+    right: 200%;
+    display:block;
+    text-decoration: none;
+    color: #dedce1;
+    font-size: 20px;
+}
+.menu ui li a ::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:1px;
+    background-color: yellow;
+    top: 110%;
+    left: 0;
+    border-radius: 5px;
+    transition: 0.4s;
+    transform: scale(0);
+}
+.menu ui li a:hover::after{
+    transform: scale(1);
+}
+.menu ui li a.active::after{
+    transform: scale(1);
+}
+.menu #menuBtn{
+    cursor: pointer;
+    user-select:none;
+    display: none;
+}
+#menuBtn .bar{
+    width: 30px;
+    height: 3px;
+    background-color:red;
+    margin: 5px auto;
+    border-radius:5px;
+    transition:0.4s cubic-bezier(1, 0.2, 0.2,1);
+}
+.container main{
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-image: url(../imagem/leao.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color:#000000;
+}
+
+
+.infoText p{
+    color: rgb(193, 37, 255);
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.infoText h1{
+    color: #dedce1;
+    font-size: 50px;
+    padding: 8px 0px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
+}
+.infoText h1 span{
+    color: yellow;
+    padding-left:  10px;
+}
+.infoText button {
+    padding:  10px 12px;
+    border-radius: 1px solid #79747b;
+    border-radius: 20px;
+    outline: 18px;
+    text-transform: uppercase;
+    background-color: #000000;
+    color:yellow;
+    margin-top:40px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+img {
+    width: 45px;
+    height: 43px;
+    filter:brightness(200%); 
+    background-color: #232323;
+     
+}
+
+.infoText button:hover{
+    color:red;
+}
+
+footer {
+    padding: 20px 0px;
+}
+
+@media(max-width: 768px){
+    .menu #menuBtn{
+       display: block;
+    }
+    .menu ul{
+        position: fixed;
+        width: 250px;
+        height: calc(100vh - 70px);
+        top: 70px;
+        right:-250px;
+        background-color: #232323;
+        border-radius: 30% 0% 0% 80%;
+        display: flex;
+        align-items: center;
+        flex-direction:  column;
+        border-top: 1px solid red;
+        transition: right 0.4s cubic-bezier(1, 0.2,0.2,1);
+    }
+    .menu ul li{
+        padding: 20px;
+        letter-spacing: 2px;
+    
+    }
+    .menu ul li:nth-child(1){
+        margin-top: 30px;
+        
+    }
+    .container .menu{
+        background-color: #232323;
+    
+   
+    }
+    .container main{
+       background-position: center;
+    }
+    #menuBtn.active .bar:nth-child(2){
+        transform: translateX(-30px);
+        opacity:100;
+
+    }
+    #menuBtn.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        opacity: 100;
+        
+    }
+    #menuBtn.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        opacity: 100;
+        
+    }
+    .menu ul.active{
+        right: 0;
+    }
+}
